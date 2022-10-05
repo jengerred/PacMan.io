@@ -59,15 +59,16 @@ class Boundary {
     }
 
     class Ghost {
-        static speed = 2
+        static speed = 1
         constructor({position, velocity, color = 'red'}) {
             this.position = position
             this.velocity = velocity
             this.radius = 15
             this.color = color
             this.prevCollisions = []
-            this.speed = 2
+            this.speed = 1
             this.scared = false
+            
         }
 
         draw() {
@@ -125,17 +126,18 @@ const powerUps = []
 const ghosts = [
     new Ghost ({
         position: {
-            x: Boundary.width * 6 + Boundary.width / 2,
-            y: Boundary.height + Boundary.height / 2
+            x: Boundary.width * 6 + Boundary.width/2,
+            y: Boundary.height + Boundary.height/2
         },
         velocity: {
             x: Ghost.speed,
             y: 0
         }
+        
     }),
     new Ghost ({
         position: {
-            x: Boundary.width * 3  + Boundary.width/2,
+           x: Boundary.width * 3  + Boundary.width/2,
             y: Boundary.height* 9 + Boundary.height/2
         },
         velocity: {
@@ -507,6 +509,7 @@ let animationId
 
       for (let i = ghosts.length - 1; 0 <= i; i--){
           const ghost = ghosts[i]
+          
       if (
         Math.hypot(
             ghost.position.x - player.position.x,
@@ -589,6 +592,7 @@ let animationId
      ghost.update()
 
      const collisions = []
+     
 
      boundaries.forEach(boundary => {
         
@@ -615,7 +619,7 @@ let animationId
     circle: {
         ...ghost, 
         velocity: {
-        x: ghost.speed,
+        x: -ghost.speed,
         y: 0
     }
 }, 
@@ -658,7 +662,7 @@ if (!collisions.includes('down')
  if (collisions.length > ghost.prevCollisions.length)
   ghost.prevCollisions = collisions
 
-  if (JSON.stringify(collisions) !== JSON.stringify(ghost.prevCollisions)) 
+  if (JSON.stringify(collisions) !== JSON.stringify(ghost.prevCollisions))
   {
 
 if (ghost.velocity.x > 0) ghost.prevCollisions.push('right')
@@ -686,7 +690,7 @@ const pathways = ghost.prevCollisions.filter((collision) => {
 
                 case 'right':
                     ghost.velocity.y = 0
-                    ghost.velocity.x = ghost.speed
+                    ghost.velocity.x = ghost.speed;
                     break
 
                     case 'left':
@@ -749,6 +753,7 @@ addEventListener('keyup', ({key}) => {
             break
     }
     })
+
 
 
 
