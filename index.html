@@ -11,13 +11,56 @@
         padding: 10px 20px;;
     }
 
-
-
+    
 </style>
-<p style="color: white; font-family: sans-serif; 
-font-size: 14px; margin-bottom: 6px;">
+
+
+
+<link type="text/css" rel="stylesheet" href="style.css"> 
+
+   <div class="container" id="container">
+        
+        <h2 class="h2" id="h2">Game Rules:</h2>
+        
+        <h3 class="h3" id="h3">- Use -w a s d- keys to move PacMan</h3>
+        <h3 class="h3" id="h3">- w key - moves up</h3>
+        <h3 class="h3" id="h3">- a key - moves left</h3>
+        <h3 lcass="h3" id="h3">- s key - moves down</h3>
+        <h3 class="h3" id="h3">- d key - moves right</h3>
+        <h3 lcass="h3" id="h3">- If you run into a ghost you will lose</h3>
+        <h3 lcass="h3" id="h3">- Get the powerUp to make the ghosts </h3>
+        <h3 lcass="h3" id="h3">scared and turn blue, when they are blue</h3>
+        <h3 lcass="h3" id="h3">you can eat them.</h3>
+    
+        <h3 class="h3" id="h4" style="font-size: 30px">Eat all the pellets to win</h3> 
+    
+    <button class="button-Play" id="play">Play</button>
+    
+    </div>
+
+    <p style="color: white; font-family: sans-serif; 
+font-size: 24px; margin-bottom: 6px;">
     <span>Score: </span><span id="scoreEl">0</span>
 </p>
+
 <canvas>
-<script src = "index.js"></script> 
+    <script type="text/javascript">
+    document.getElementById("play").onclick = function () {
+        var script = document.createElement("script");
+        script.src = "index.js";
+
+        h2.style.visibility = 'hidden';
+        container.style.visibility = 'hidden';
+
+    document.documentElement.firstChild.appendChild(script);
+};
+    </script>
 </canvas>
+
+
+
+
+
+
+
+

@@ -1,6 +1,18 @@
+
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
-const scoreEL = document.querySelector('#scoreEl')
+const scoreEl = document.querySelector('#scoreEl')
+
+var script = document.createElement("script");
+
+play.onclick = function(){
+  var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "index.js."; 
+    document.getElementsByTagName("head")[0].appendChild(script);
+    return false;
+}
+
 
 canvas.width = innerWidth
 canvas.height = innerHeight
@@ -174,7 +186,7 @@ const ghosts = [
 }
 
 let lastKey = ''
- let score = 0
+let score = 0
 
 const map = [
     ['1', '-', '-', '-', '-', '-', '-', '-', '-', '-', '2'],
@@ -753,9 +765,7 @@ addEventListener('keyup', ({key}) => {
             break
     }
     })
-
-
-
+ 
 
 
 
